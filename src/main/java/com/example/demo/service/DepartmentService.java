@@ -2,8 +2,22 @@ package com.example.demo.service;
 
 import com.example.demo.entity.Department;
 
-public interface DepartmentService {
-    public static Department saveDepartment(Department department) {
+import java.util.List;
 
-    }
-}
+public interface DepartmentService {
+
+
+    public Department saveDepartment(Department department);
+    public List<Department> fetchDepartmentList();
+
+
+
+
+
+   }
+
+
+
+
+
+
