@@ -11,10 +11,12 @@ public interface DepartmentService {
     public List<Department> fetchDepartmentList();
 
 
+   public List<Department> checkDepartmentList();
 
+    List<Department> checkInActiveDepartmentList();
 
-
-   }
+    List<Department> deleteDepartmentId();
+}
 
 
 

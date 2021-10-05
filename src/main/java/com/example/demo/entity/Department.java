@@ -15,6 +15,26 @@ public class Department {
     private String departmentAddress;
     private String departmentCode;
 
+
+    private boolean isExist = true;
+    private boolean isActive = true;
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
+
+    public boolean isExist() {
+        return isExist;
+    }
+
+   public void setExist(boolean exist) {
+        isExist = exist;
+    }
+
     public long getDepartmentId() {
         return departmentId;
     }
@@ -47,11 +67,13 @@ public class Department {
         this.departmentCode = departmentCode;
     }
 
+
     public Department(long departmentId, String departmentName, String departmentAddress, String departmentCode) {
         this.departmentId = departmentId;
         this.departmentName = departmentName;
         this.departmentAddress = departmentAddress;
         this.departmentCode = departmentCode;
+
 
     }
 

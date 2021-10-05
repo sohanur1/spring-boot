@@ -23,5 +23,20 @@ public class DepartmentServiceImpl implements DepartmentService {
         return departmentRepository.findAll();
     }
 
+    @Override
+    public List<Department> checkDepartmentList() {
+        return departmentRepository.findAllByIsExistTrue();
+    }
+
+    @Override
+    public List<Department> checkInActiveDepartmentList() {
+          return departmentRepository.findAllByIsExistFalse();
+    }
+
+    @Override
+    public List<Department> deleteDepartmentId() {
+        return departmentRepository.delete();
+    }
+
 
 }
