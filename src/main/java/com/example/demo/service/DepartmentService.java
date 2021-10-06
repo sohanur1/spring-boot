@@ -7,15 +7,17 @@ import java.util.List;
 public interface DepartmentService {
 
 
+
+
     public Department saveDepartment(Department department);
     public List<Department> fetchDepartmentList();
-
 
    public List<Department> checkDepartmentList();
 
     List<Department> checkInActiveDepartmentList();
 
-    List<Department> deleteDepartmentId();
+
+    Department fetchDepartmentById(Long departmentId);
 }
 
 

@@ -20,23 +20,29 @@ public class DepartmentController {
     }
     @GetMapping("/departments")
    public List<Department> fetchDepartmentList(){
-      return departmentService.fetchDepartmentList();
+
+        return departmentService.fetchDepartmentList();
    }
 
    @GetMapping("/departments/active")
    public List<Department> checkDepartmentList(){
+
         return departmentService.checkDepartmentList();
    }
 
     @GetMapping("/departments/inactive")
     public List<Department> checkInActiveDepartmentList(){
+
         return departmentService.checkInActiveDepartmentList();
     }
 
-    @DeleteMapping("/delete")
-    public List<Department> deleteDepartmentId(){
-        return departmentService.deleteDepartmentId();
+    @GetMapping("/departments/{id}")
+    public Department fetchDepartmentById( @PathVariable("id") Long departmentId){
+        return departmentService.fetchDepartmentById(departmentId);
+
     }
+
+
 
 
 
