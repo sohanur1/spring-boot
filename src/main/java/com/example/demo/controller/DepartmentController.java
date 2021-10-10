@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 public class DepartmentController {
 
-    @Autowired
+
     private DepartmentService departmentService;
 
     @PostMapping("/departments")
