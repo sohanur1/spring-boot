@@ -5,15 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "students")
 public class Student {
 
 
@@ -23,4 +22,8 @@ public class Student {
     private String studentName;
     private String studentAddress;
     private String studentMail;
+
+    @ManyToOne
+    @JoinColumn(name = "department_id", insertable = false,updatable = false)
+    private Department department;
 }

@@ -5,28 +5,28 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "department")
 public class Department {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+
     private long departmentId;
     private String departmentName;
     private String departmentAddress;
     private String departmentCode;
-
-
     private boolean isExist = true;
-    private boolean isActive = true;
 
+    @OneToMany
+    @JoinColumn(name = "department_id")
+    private List<Student> students;
 
 }
