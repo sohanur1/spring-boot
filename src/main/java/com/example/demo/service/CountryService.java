@@ -13,4 +13,6 @@ public interface CountryService {
 
 
     void deleteCountrytById(Long countryId);
+
+    Country updateCountryId(Long countryId, Country country);
 }

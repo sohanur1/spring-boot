@@ -21,6 +21,7 @@ public class Country {
 
     private long countryId;
     private String countryName;
+    private String countryCode;
     @OneToMany(cascade = CascadeType.ALL,
             fetch = FetchType.LAZY)
     @JoinColumn(name = "country_id")

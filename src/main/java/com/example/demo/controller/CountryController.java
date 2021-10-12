@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.Country;
+import com.example.demo.entity.Department;
 import com.example.demo.service.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +27,11 @@ public class CountryController {
     public String deleteCountrytById(@PathVariable("id") Long countryId) {
         countryService.deleteCountrytById(countryId);
         return "Country deleted successfully";
+    }
+    @PutMapping("/country/{id}")
+    public Country updateCountrytId(@PathVariable ("id") Long countryId,
+                                         @RequestBody Country country){
+        return countryService.updateCountryId(countryId,country);
 
     }
 }
