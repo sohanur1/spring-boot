@@ -13,4 +13,6 @@ public interface UserService {
     List<User> fetchUserList();
 
     void deleteUserById(Long userId);
+
+    User updateUserId(Long userId,User user);
 }
