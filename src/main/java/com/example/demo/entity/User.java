@@ -21,6 +21,7 @@ public class User {
     private String userName;
     private String userMail;
     private String userBirthdate;
+
     @ManyToOne(cascade = CascadeType.ALL,
             fetch = FetchType.LAZY)
     @JoinColumn(name = "country_id")
