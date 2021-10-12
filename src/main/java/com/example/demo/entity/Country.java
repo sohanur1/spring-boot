@@ -1,30 +1,28 @@
 package com.example.demo.entity;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "students")
-public class Student {
-
-
+@Table(name = "country")
+public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long studentId;
-    private String studentName;
-    private String studentAddress;
-    private String studentMail;
 
-    @ManyToOne(cascade = CascadeType.ALL,
+    private long countryId;
+    private String countryName;
+    @OneToMany(cascade = CascadeType.ALL,
             fetch = FetchType.LAZY)
-    @JoinColumn(name = "department_id")
-    private Department department;
+    @JoinColumn(name = "country_id")
+    private List<User> user;
 }

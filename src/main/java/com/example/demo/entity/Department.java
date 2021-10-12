@@ -25,7 +25,8 @@ public class Department {
     private String departmentCode;
     private boolean isExist = true;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY)
     @JoinColumn(name = "department_id")
     private List<Student> students;
 

@@ -12,19 +12,17 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "students")
-public class Student {
-
-
+@Table(name = "user")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long studentId;
-    private String studentName;
-    private String studentAddress;
-    private String studentMail;
 
+    private long userId;
+    private String userName;
+    private String userMail;
+    private String userBirthdate;
     @ManyToOne(cascade = CascadeType.ALL,
             fetch = FetchType.LAZY)
-    @JoinColumn(name = "department_id")
-    private Department department;
+    @JoinColumn(name = "country_id")
+    private Country country;
 }
