@@ -11,4 +11,6 @@ public interface UserService {
     User saveDepartment(User user);
 
     List<User> fetchUserList();
+
+    void deleteUserById(Long userId);
 }
