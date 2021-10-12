@@ -21,4 +21,11 @@ public class CountryServiceImpl implements CountryService{
     public List<Country> fetchCountryList() {
         return countryRepository.findAll();
     }
+
+    @Override
+    public void deleteCountrytById(Long countryId) {
+        countryRepository.deleteById(countryId);
+    }
+
+
 }

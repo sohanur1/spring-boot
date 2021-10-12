@@ -10,4 +10,7 @@ public interface CountryService {
     Country saveCountry(Country country);
 
     List<Country> fetchCountryList();
+
+
+    void deleteCountrytById(Long countryId);
 }
